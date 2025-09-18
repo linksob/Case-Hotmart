@@ -14,7 +14,6 @@ resource "aws_s3_bucket" "glue_scripts" {
   }
 }
 
-# Opcional: pasta de logs separada (CloudWatch já coleta logs, mas S3 é útil)
 resource "aws_s3_bucket" "glue_logs" {
   bucket = "meu-bucket-glue-logs-${var.env}"
 
@@ -69,9 +68,10 @@ resource "aws_glue_job" "tb_spec_purchases" {
   description = "Job ETL de exemplo criado via Terraform"
 
   command {
-    name            = "glueetl"               
-    script_location = "s3://bucket/caminho/ex_2_glue_job.py"
-    python_version  = "3"                      
+    name            = "glueetl"
+    # Agora apontando para o novo script
+    script_location = "s3://${aws_s3_bucket.glue_scripts.bucket}/ex_2_glue_job.py"
+    python_version  = "3"
   }
 
   default_arguments = {
@@ -83,8 +83,8 @@ resource "aws_glue_job" "tb_spec_purchases" {
   }
 
   max_retries        = 1
-  glue_version       = "4.0"    
-  worker_type        = "G.1X"     
+  glue_version       = "4.0"
+  worker_type        = "G.1X"
   number_of_workers  = 2
 
   tags = {

@@ -11,7 +11,6 @@ from awsglue.data_quality import DataQuality
 from pyspark.sql.types import StructType, StructField, TimestampType, DateType, IntegerType, DoubleType, StringType
 
 
-
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
 sc = SparkContext()
 glueContext = GlueContext(sc)

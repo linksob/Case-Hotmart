@@ -26,6 +26,8 @@ Este projeto provisiona e executa um pipeline ETL serverless usando **AWS Glue**
 Case-Hotmart/
 │
 ├── Ex_2/
+│   ├── ex_1.sql/                   # Respostas do ex 1
+├── Ex_2/
 │   ├── app/
 │   │   └── ex_2_glue_job.py        # Script principal do Glue Job (PySpark)
 │   ├── tests/

@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-1.x-purple?logo=terraform&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange?logo=amazon-aws&logoColor=white)
+
+
 # Case Hotmart – AWS Glue ETL com Terraform
 
 Este projeto provisiona e executa um pipeline ETL serverless usando **AWS Glue** e infraestrutura como código com **Terraform**. O objetivo é processar dados de compras, consolidando informações de múltiplas tabelas, aplicando regras de qualidade e salvando o resultado em um bucket S3 particionado.

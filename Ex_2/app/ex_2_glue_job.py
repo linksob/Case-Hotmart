@@ -172,7 +172,7 @@ def upload(final_df):
         frame=final_dyf,
         connection_type="s3",
         connection_options={
-            "path": "s3://bucket/caminho/tb_spec_purchases/",
+            "path": "s3://meu-bucket-glue-dev/tb_spec_purchases/",
             "partitionKeys": ["transaction_date"]
         },
         format="glueparquet",
